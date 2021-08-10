@@ -10,6 +10,9 @@ GET /login
 - present login form
 POST /login
 - create session and redirect
+    - Tell player who they are logged in as
+    - Forgot to build a logout
+    - Create a protected page
 
 GET /raids/new
 - show form to create new raid
