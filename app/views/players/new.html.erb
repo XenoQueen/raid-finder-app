@@ -1,0 +1,9 @@
+<h1>Create new Player Account</h1>
+
+<%= form_tag("/players") do %>
+    <p>
+        <%= label_tag "Player Name:" %>
+        <%= text_field_tag "player name" %>
+    </p>
+        <%= submit_tag "Create Account" %>
+<% end %>
