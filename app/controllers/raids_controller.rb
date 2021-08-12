@@ -5,7 +5,7 @@ class RaidsController < ApplicationController
     end
 
     def index
-        @raids = Raid.all
+        @raids = Raid.by_status(:open)
     end
 
     def show
