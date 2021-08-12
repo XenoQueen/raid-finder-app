@@ -6,7 +6,7 @@ belongs_to :member_player, :class_name => "Player", :optional => true
         case status
         when :open
             where(:member_player => nil)
-        when :closed
+        when :accepted
             where.not(:member_player => nil)
         end
     end
