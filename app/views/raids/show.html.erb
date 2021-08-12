@@ -1,7 +1,7 @@
 <h1><%= @raid.raid_name %></h1>
 <h2>Requested by: <%= @pair.leader_player.playername %></h2>
 
-<% if @raid.member_player %>
+<% if @raid.accepted? %>
     <h3>Accepted by: <%= @raid.member_player.playername %></h3>
 <% else %>
     <%= form_for(@raid) do |f| %>
