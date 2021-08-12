@@ -8,6 +8,10 @@ class RaidsController < ApplicationController
         @raids = Raid.all
     end
 
+    def show
+        @raid = Pair.find(params[:id])
+    end
+
     def create
         @raid = Raid.new
         @raid.raid_name = params["Raid Name"]
