@@ -12,4 +12,10 @@ class SessionsController < ApplicationController
             redirect_to "/login", :notice => "Could not find player, please try again."
         end
     end
+
+    def destroy
+        reset_session
+
+        redirect_to "/"
+    end
 end
