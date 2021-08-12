@@ -8,4 +8,8 @@ class ApplicationController < ActionController::Base
             @current_player = Player.find(session[current_player_id])
         end
     end
+
+    def login(player)
+        session[:current_player_id] = @player.id
+    end
 end
