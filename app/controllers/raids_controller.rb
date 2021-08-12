@@ -12,6 +12,15 @@ class RaidsController < ApplicationController
         @raid = Pair.find(params[:id])
     end
 
+    def update
+        @raid = Raid.find(params[:id])
+        if @raid.accepted_by(current_player)
+            redirect_to @raid
+        else
+            render :show
+        end
+    end
+
     def create
         @raid = Raid.new
         @raid.raid_name = params["Raid Name"]
