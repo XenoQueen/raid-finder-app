@@ -1,0 +1,14 @@
+<h1>Create New Raid</h1>
+
+<%= form_tag("/raids") do %>
+    <%= label_tag "Raid Name" %>
+    <%= text_field_tag "Raid Name" %>
+
+    <%= label_tag "Player Class" %>
+    <%= text_field_tag "Player Class" %>
+
+    <%= label_tag "Item Level" %>
+    <%= text_field_tag "Item Level" %>
+
+    <%= submit_tag %>
+<% end %>

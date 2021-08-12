@@ -10,10 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_10_062632) do
+ActiveRecord::Schema.define(version: 2021_08_12_081130) do
 
   create_table "players", force: :cascade do |t|
     t.string "playername"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "raids", force: :cascade do |t|
+    t.string "name"
+    t.string "player_class"
+    t.integer "ilvl"
+    t.integer "leader_player_id"
+    t.integer "member_player_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

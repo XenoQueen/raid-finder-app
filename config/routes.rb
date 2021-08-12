@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   post '/sessions', to: 'sessions#create'
 
   get '/logout', to: 'sessions#destroy'
+
+  resources :raids
   
   root 'application#home'
 end
