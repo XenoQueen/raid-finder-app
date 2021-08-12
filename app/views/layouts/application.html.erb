@@ -11,12 +11,21 @@
   </head>
 
   <body>
-  <% if logged_in? %>
-  <nav>
-    You are logged in as: <%= current_player.playername %>
-      <a href="/logout">Logout</a>
-  </nav>
-  <% end %>
+    <nav>
+      <section>
+        <%= link_to_unless_current "Open Raids", raids_path %>
+      </section>
+
+      <section class="utility">
+        <% if session[:current_player_id] %>
+        You are logged in as: <%= @current_player.playername %> | <a href="/logout">Logout</a>
+        <% else %>
+        <%= link_to_unless_current "Login", login_path %> |
+        <%= link_to_unless_current "Register", register_path %>
+        <% end %>
+      </section>
+    </nav>
+    <% end %>
     <%= yield %>
   </body>
 </html>
