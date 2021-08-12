@@ -1,1 +1,10 @@
 <h1><%= @raid.raid_name %></h1>
+<h2>Requested by: <%= @pair.leader_player.playername %></h2>
+
+<% if @raid.member_player %>
+    <h3>Accepted by: <%= @raid.member_player.playername %></h3>
+<% else %>
+    <%= form_for(@raid) do |f| %>
+        <%= f.submit "Accept Raid Party" %>
+    <% end %>
+<% end %>
