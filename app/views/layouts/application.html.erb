@@ -14,6 +14,7 @@
   <% if session[:current_player_id] %>
   <nav>
     You are logged in as: <%= @current_player.playername %>
+      <a href="/logout">Logout</a>
   </nav>
   <% end %>
     <%= yield %>
