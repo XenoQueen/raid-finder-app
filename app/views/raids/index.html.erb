@@ -1,7 +1,7 @@
 <h1>All Raids</h1>
 
 <ol>
-<% @raids.each do |p| %>
-    <li><%= r.raid_name %></li>
+<% @raids.each do |r| %>
+    <li><%= link_to "#{r.raid_name} by #{r.leader_player.playername}", raid_path(r) %></li>
 <% end %>
 </ol>
