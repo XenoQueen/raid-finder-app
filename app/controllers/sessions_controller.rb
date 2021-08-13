@@ -5,8 +5,9 @@ class SessionsController < ApplicationController
 
     def create
         @player = Player.find_by(:playername => params[:playername])
-        if @player
-            session[:current_player_id] = @player.id
+        if @player && @player.authenticate(params[:password])
+            
+            login(@player)
             redirect_to "/"
         else
             redirect_to "/login", :notice => "Could not find player, please try again."
