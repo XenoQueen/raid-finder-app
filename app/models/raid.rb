@@ -1,7 +1,7 @@
 class Raid < ApplicationRecord
 belongs_to :leader_player, :class_name => "Player"
 belongs_to :member_player, :class_name => "Player", :optional => true
-scope :by_status, -> (status) {where("created_at < ?", time)}
+validates :raidname, :length => {:in => 5..50}
 
     def self.by_status(status)
         case status
