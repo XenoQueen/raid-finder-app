@@ -5,6 +5,6 @@
     <h3>Accepted by: <%= @raid.member_player.playername %></h3>
 <% else %>
     <%= form_for(@raid) do |f| %>
-        <%= f.submit "Accept Raid Party" %>
+        <%= f.submit "Join This Raid" %>
     <% end %>
 <% end %>
