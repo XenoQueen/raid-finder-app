@@ -4,7 +4,7 @@ belongs_to :member_player, :class_name => "Player", :optional => true
 validates :raidname, :length => {:in => 5..50}
 validates :playerclass, :length => {:in => 4..12}
 validates :itemlevel, :presence => true
-
+validate :different_player
 
     def self.by_status(status)
         case status
@@ -15,13 +15,14 @@ validates :itemlevel, :presence => true
         end
     end
 
-    def accepted_by(player)
-        if player == self.leader_player
+    def different_player
+        if self.member_player == self.leader_player
             self.errors.add(:member_player)
-            return false   
-        else
-            self.update(:member_player => current_player)
         end
+    end
+
+    def accepted_by(player)
+        self.update(:member_player => player)
     end
 
     def accepted?
