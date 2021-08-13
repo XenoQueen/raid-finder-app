@@ -11,8 +11,11 @@ class PlayersController < ApplicationController
     def create
         @player = Player.new
         @player.playername = params[:playername]
-        @player.save
-
-        redirect_to "/login"
+        @player.password = params[:password]
+        if @player.save
+            redirect_to "/login"
+        else
+            render :new
+        end
     end
 end
