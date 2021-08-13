@@ -1,14 +1,35 @@
 <h1>Request New Raid</h1>
 
 <%= form_tag("/raids") do %>
-    <%= label_tag "Raid Name" %>
-    <%= text_field_tag "Raid Name" %>
+    <p>
+        <%= label_tag "raidname", "Raid Name" %>
+        <%= if @player && @player.errors[:raidname] %>
+            <%= @raid.errors.full_messages_for(:raidname).each do |message| %>
+                <p><%= message %></p>
+            <% end %>
+        <% end %>
+        <%= text_field_tag "raidname" %>
+    </p>
 
-    <%= label_tag "Player Class" %>
-    <%= text_field_tag "Player Class" %>
+    <p>
+        <%= label_tag "playerclass", "Player Class" %>
+        <%= if @player && @player.errors[:playerclass] %>
+            <%= @raid.errors.full_messages_for(:playerclass).each do |message| %>
+                <p><%= message %></p>
+            <% end %>
+        <% end %>
+        <%= text_field_tag "playerclass" %>
+    </p>
 
-    <%= label_tag "Item Level" %>
-    <%= text_field_tag "Item Level" %>
+    <p>
+        <%= label_tag "itemlevel", "Item Level" %>
+        <%= if @player && @player.errors[:itemlevel] %>
+            <%= @raid.errors.full_messages_for(:itemlevel).each do |message| %>
+                <p><%= message %></p>
+            <% end %>
+        <% end %>
+        <%= text_field_tag "itemlevel" %>
+    </p>
 
     <%= submit_tag %>
 <% end %>
