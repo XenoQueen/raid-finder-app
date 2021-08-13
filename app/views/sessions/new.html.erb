@@ -6,8 +6,13 @@
 
 <%= form_tag("/sessions") do %>
     <p>
-        <%= label_tag "Player Name:" %>
+        <%= label_tag "playername", "Player Name:" %>
         <%= text_field_tag "playername" %>
+    </p>
+
+    <p>
+        <%= label_tag "password", "Password:" %>
+        <%= password_field_tag "password" %>
     </p>
         <%= submit_tag "Login" %>
 <% end %>
