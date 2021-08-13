@@ -7,7 +7,11 @@
     </p>
 
     <p>
-        <%= label_tag "password", "Password:" %>:
+        <%= label_tag "password", "Password:" %>
+        <%= if @player && @player.errors.on(:password) %>
+        <p>Please enter a password</p>
+        <% end %>
+
         <%= password_field_tag "password" %>
     </p>
         <%= submit_tag "Register" %>
