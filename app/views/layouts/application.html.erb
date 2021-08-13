@@ -13,7 +13,9 @@
   <body>
     <nav>
       <section>
-        <%= link_to_unless_current "Open Raids", raids_path %>
+        <%= link_to_unless_current "Home", root_path %> |
+        <%= link_to_unless_current "Open Raids", raids_path %> |
+        <%= link_to_unless_current "New Raid", new_raid_path %>
       </section>
 
       <section class="utility">
