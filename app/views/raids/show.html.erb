@@ -5,6 +5,9 @@
     <h3>Accepted by: <%= @raid.member_player.playername %></h3>
 <% else %>
     <%= form_for(@raid) do |f| %>
+        <% if @raid.errors[:member_player].any? %>
+            <p>You cannot join your own raid.</p>
+        <% end %>
         <%= f.submit "Join This Raid" %>
     <% end %>
 <% end %>
