@@ -15,7 +15,7 @@ class PlayersController < ApplicationController
         if @player.save
             redirect_to "/login"
         else
-            render :new
+            render :new, :error => "Please enter a password."
         end
     end
 end
