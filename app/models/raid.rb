@@ -2,6 +2,9 @@ class Raid < ApplicationRecord
 belongs_to :leader_player, :class_name => "Player"
 belongs_to :member_player, :class_name => "Player", :optional => true
 validates :raidname, :length => {:in => 5..50}
+validates :playerclass, :length => {:in => 4..12}
+validates :itemlevel, :presence => true
+
 
     def self.by_status(status)
         case status
