@@ -1,9 +1,14 @@
-<h1>Create new Player Account</h1>
+<h1>Register new Player Account</h1>
 
 <%= form_tag("/players") do %>
     <p>
-        <%= label_tag "Player Name:" %>
-        <%= text_field_tag "player name" %>
+        <%= label_tag "playername", "Player Name:" %>
+        <%= text_field_tag "playername" %>
     </p>
-        <%= submit_tag "Create Account" %>
+
+    <p>
+        <%= label_tag "password", "Password:" %>:
+        <%= password_field_tag "password" %>
+    </p>
+        <%= submit_tag "Register" %>
 <% end %>
