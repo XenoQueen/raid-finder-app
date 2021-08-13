@@ -12,10 +12,11 @@ class PlayersController < ApplicationController
         @player = Player.new
         @player.playername = params[:playername]
         @player.password = params[:password]
+
         if @player.save
             redirect_to "/login"
         else
-            render :new, :error => "Please enter a password."
+            render :new
         end
     end
 end

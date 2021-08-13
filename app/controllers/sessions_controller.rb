@@ -6,7 +6,6 @@ class SessionsController < ApplicationController
     def create
         @player = Player.find_by(:playername => params[:playername])
         if @player && @player.authenticate(params[:password])
-            
             login(@player)
             redirect_to "/"
         else
@@ -16,7 +15,6 @@ class SessionsController < ApplicationController
 
     def destroy
         reset_session
-
         redirect_to "/"
     end
 end
