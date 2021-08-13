@@ -23,15 +23,15 @@ class RaidsController < ApplicationController
 
     def create
         @raid = Raid.new
-        @raid.raid_name = params["Raid Name"]
-        @raid.player_class = params["Player Class"]
-        @raid.item_level = params["Item Level"]
+        @raid.raid_name = params["raidname"]
+        @raid.player_class = params["playerclass"]
+        @raid.item_level = params["itemlevel"]
         @raid.leader_player_id = current_player.id
-            if @raid.save
-                redirect_to "/raids"
-            else
-
-            end
+            
+        if @raid.save
+            redirect_to "/raids"
+        else
+            render :new
         end
     end
 
