@@ -16,7 +16,12 @@ validates :itemlevel, :presence => true
     end
 
     def accepted_by(player)
-        self.update(:member_player => current_player)
+        if player == self.leader_player
+            self.errors.add(:member_player)
+            return false   
+        else
+            self.update(:member_player => current_player)
+        end
     end
 
     def accepted?
